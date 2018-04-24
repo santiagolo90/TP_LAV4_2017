@@ -1,3 +1,31 @@
-<p>
-  anagrama works!
-</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body style="background-color: whitesmoke" >
+<h2></h2>
+<div class="container">
+	<div class="fondo">
+		<div style="text-align:left;">
+			<h1 >{{nuevoJuego.nombre}}!</h1>
+			<h2>Su palabra es: {{nuevoJuego.palabraAnagrama}}  </h2>
+		</div>
+		<div class="row">
+			<div class="col-sm-12" >
+				<div class="input-group">
+					<label for="palabraOrdenadaa">Respuesta</label>
+					<input [(ngModel)]="nuevoJuego.palabraIngresada" placeholder="ingrese palabra" name="palabraOrdenadaa" type="text" class="form-control" style="width:100%"/>
+				</div>
+			</div>
+			<div class="col-sm-12" >
+				<br>
+				<button *ngIf="botonComenzarVerificar == true"  (click)="generarPalabra()"  class="btn btn-info btn-lg">Comenzar</button>
+				<button *ngIf="botonComenzarVerificar == false" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button>
+			</div>
+		</div>
+		<div class="col-sm-12" >
+			<h4 [hidden]="spiner"><p><img src="./assets/imagenes/mate/cargando.gif" >Esperando numero...</p></h4>
+			<h4 [hidden]="!gano">usted adivino el número</h4>
+			<h4 [hidden]="gano">usted aún no gano </h4>
+		</div>
+	</div>
+</div>
+	
+</body>

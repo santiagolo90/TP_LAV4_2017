@@ -1,0 +1,43 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+footer{
+    background:#0A5699;
+    color:#EFDA54;
+}
+.hero-text {
+    text-align: center;
+    color:#EFDA54;
+}
+.hero-text a {
+    text-decoration:none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color:#EFDA54;
+    /*background-color: #ddd;*/
+    text-align: center;
+    cursor: pointer;
+}
+        
+.hero-text a:hover,
+.hero-text a:focus  {
+    background-color:#0A5699 !important;
+    color:rgb(175, 160, 60) !important;
+}
+
+
+.center-pills {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* alto y bajo del footer tenia 70 y 70*/
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

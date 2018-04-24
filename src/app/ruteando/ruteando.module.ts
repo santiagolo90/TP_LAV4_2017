@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '../../../node_modules/@angular/core';
+import { CommonModule } from '../../../node_modules/@angular/common';
 // importo del module principal
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '../../../node_modules/@angular/router';
 import { AdivinaElNumeroComponent } from '../componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from '../componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from '../componentes/login/login.component';
@@ -22,6 +22,11 @@ import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/lista
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 
+//MIOS
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { JuegoSonidoComponent } from '../componentes/juego-sonido/juego-sonido.component';
+
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -41,6 +46,9 @@ children:
      [{path: '' , component: MenuCardComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
+      {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'Sonido' , component: JuegoSonidoComponent},
+      {path: 'PPT' , component: PiedraPapelTijeraComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
 },

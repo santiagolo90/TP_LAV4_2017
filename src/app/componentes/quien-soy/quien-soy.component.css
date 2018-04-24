@@ -1,3 +1,4 @@
+
 .imagenDeQuienSoy{
     width: 100%;
    
@@ -22,13 +23,15 @@ p {font-size: 16px;}
     color: #555555;
 }
 .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
+    background:#0A5699;
+    color:#EFDA54;
 }
+/* alto y bajo del footer tenia 70 y 70*/
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -40,4 +43,25 @@ p {font-size: 16px;}
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
+}
+/*Footer*/
+.center-pills {
+    display: flex;
+    justify-content: center;
+}
+.hero-text a {
+    text-decoration:none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color:#EFDA54;
+    /*background-color: #ddd;*/
+    text-align: center;
+    cursor: pointer;
+}
+.hero-text a:hover,
+.hero-text a:focus  {
+    background-color:#0A5699 !important;
+    color:rgb(175, 160, 60) !important;
 }

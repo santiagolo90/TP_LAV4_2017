@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '../../../../node_modules/@angular/core';
+
 
 @Component({
   selector: 'app-cabecera',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    
+    
   }
 
+  ngOnInit() {
+    
+  }
+
+  prueba()
+  {
+    alert("Cerrando")
+  }
+  
+
 }
+

@@ -1,12 +1,56 @@
-<div class="panel panel-default">
-  <div class="hero-text">
-      <h1 style="font-size:50px">Sala de Juegos</h1>
-      <p>Octavio villegas</p>
-      <a href="https://github.com/octaviovillegas"target="_blank">en GitHub <i class="fa fa-github"></i></a>
-      <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
-  </div>
-  <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
-          <li><a  routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
-  </ul>
-</div>
+
+<!-- navbar agrega un poco de margen -->
+<!-- navbar-inverse da un color  -->
+<!--   navbar-fixed-top lo agrega siempre arriba 
+    <nav class="navbar navbar-fixed-top">-->
+<nav class="navbar navbar-default ">
+    <!-- container-fluid agrega un poco de padding -->
+        <!-- navbar-header -->
+        <div class="navbar-header">
+            <!-- navbar-toggle boton mobile -->
+            <button type="button" class="navbar-toggle pull-right " data-toggle="collapse" data-target="#myNavbar">
+                <!-- <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>-->
+                <a>Menu
+                    <i class="fa fa-bars"></i>
+                </a>
+            </button>
+            <!-- navbar-brand es el lugar para el logo  -->
+            <a class="" href="./">
+                    <img src="./assets/imagenes/Logo.gif"  alt="">
+            </a>
+        </div>
+        <!-- collapse oculta -->
+        <!-- navbar-collapse -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <!-- nav ordena y colores con hover-->
+            <!--navbar-nav de costado  -->
+            <!--navbar-right acomoda a la derecha   -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- <button routerLink="/Registro" button type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-user text-info"></span><span class="text-info"> Registrarse</span></button> -->
+                        <a type="button" class="btn btn-link" routerLink="/Registro"> <span class="glyphicon glyphicon-user"></span> Registrarse</a>
+                </li>
+                <li>
+                    <!-- <button routerLink="/Login" button type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-log-in text-info"></span><span class="text-info"> Ingresar</span></button> -->
+                        <a type="button" class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-in"></span>  Ingresar</a>
+                </li>
+                <li>
+                    <!-- <button (click)="prueba()" button type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-log-out text-info"></span><span class="text-info"> Cerrar sesion</span></button> -->
+                        <a type="button"  class="btn btn-link" (click)="prueba()"> <span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
+                </li>
+            </ul>
+        </div>
+
+</nav>
+
+
+    <div class="panel panel-default">
+        <div class="hero-text">
+            <h1 style="font-size:50px">Sala de Juegos</h1>
+        </div>
+    </div>

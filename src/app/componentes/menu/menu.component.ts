@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-menu',

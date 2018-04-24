@@ -1,5 +1,5 @@
 
-import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { Component, OnInit , Input, EventEmitter} from '../../../../node_modules/@angular/core';
 
 @Component({
   selector: 'app-listado-de-resultados',

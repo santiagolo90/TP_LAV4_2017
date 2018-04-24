@@ -1,16 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '../../node_modules/@angular/platform-browser';
+import { NgModule } from '../../node_modules/@angular/core';
+import { FormsModule } from '../../node_modules/@angular/forms';
 import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { HttpModule } from '@angular/http';
+import { HttpModule } from '../../node_modules/@angular/http';
+
 
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '../../node_modules/@angular/router';
 
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
 import { PaisesService } from './servicios/paises.service'; 
@@ -50,9 +51,15 @@ import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component'
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule } from '../../node_modules/@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+
+//Mios
+import { FooterComponent } from './componentes/footer/footer.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { JuegoSonidoComponent } from './componentes/juego-sonido/juego-sonido.component';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +85,10 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    FooterComponent,
+    PiedraPapelTijeraComponent,
+    JuegoSonidoComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +98,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
+  
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)

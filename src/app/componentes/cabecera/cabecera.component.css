@@ -1,7 +1,7 @@
-.panel
-{
+
+.panel{
     height: 200px;
-    background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
+    background-image: url("../../../assets/imagenes/cabecera.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,7 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-color: #3E06B0;
+color: #EFDA54;
 }
 
 .hero-text a {
@@ -33,3 +33,16 @@ cursor: pointer;
 background-color: #555;
 color: white;
 }
+.navbar{
+    background-color:whitesmoke;
+    border: none;
+}
+.navbar-nav  li a {
+    text-align: right;
+    color: #0A5699;
+}
+.navbar-nav  li a:hover {
+    color:rgb(175, 160, 60) !important;
+
+}
+

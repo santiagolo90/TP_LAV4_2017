@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '../../../node_modules/@angular/core';
 
 @Pipe({
   name: 'sexo'
