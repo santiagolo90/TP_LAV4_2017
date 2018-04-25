@@ -1,7 +1,34 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div style="text-align:center">
-  <h1>
-    {{nuevoJuego.nombre}}!
-  </h1>
- </div>
-<h2></h2>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+<body style="background-color: whitesmoke">
+  <h2></h2>
+  <div class="container-fluid">
+    <div class="fondo">
+      <div style="text-align:center;">
+        <h1>{{nuevoJuego.nombre}}</h1>
+      </div>
+    <!-- <button type="button" (click)="generarSonido()"  class="btn btn-info glyphicon glyphicon-volume-up"> Sonido</button> -->
+      <button *ngIf="botonComenzarVerificar == true"  (click)="generarPartida()"  class="btn btn-info btn-lg"><i class="far fa-check-circle"></i> Comenzar</button>
+      <button *ngIf="botonComenzarVerificar == false" (click)="generarPartida()" class="btn btn-success btn-lg"><i class="fas fa-play"></i></button>
+      <button *ngIf="botonSiguiente == true" type="button" (click)="generarPartida()"  class="btn btn-info btn-lg"> <i class="fas fa-step-forward"></i></button>
+      <img src="../../../assets/imagenes/radio.gif" *ngIf="botonComenzarVerificar == false" >
+      <!-- <label *ngIf="labelPuntos == true" class="bg-success" >Puntos: {{puntos}}</label> -->
+      <h3 *ngIf="labelPuntos == true" ><kbd class= "label-success">Puntos <i class="far fa-hand-point-right"></i> {{puntos}}</kbd></h3>
+      <div class="imagenes">
+      <br>
+      <div class="img">
+        <button class="btn btn-default btn-xs" (click)="generarPartida(1)"><img src="../../../assets/PPT/img/alexPiedra.png" ></button>
+        <button class="btn btn-default btn-xs"(click)="generarPartida(2)"><img src="../../../assets/PPT/img/alexPapel.png" ></button>
+        <button class="btn btn-default btn-xs"(click)="generarPartida(3)"><img src="../../../assets/PPT/img/alexTijera.png" ></button>
+      </div>
+      <br>
+       <div class="resultados">
+          <img src="../../../assets/PPT/img/alexNada2.png"  >
+          <img src="../../../assets/PPT/img/maloNada2.png"  >
+        </div>
+      </div>
+      <section id="msjPuntos"></section>
+    </div>
+  </div>
+</body>

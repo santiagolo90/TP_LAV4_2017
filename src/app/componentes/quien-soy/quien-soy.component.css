@@ -1,15 +1,17 @@
 
 .imagenDeQuienSoy{
-    width: 100%;
-   
+    width: 512px;
+    height:384px;
     }
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
 }
-p {font-size: 16px;}
-.margin {margin-bottom: 45px;}
+p {font-size: 14px;}
+.margin {
+    margin-bottom: 45px;
+}
 .bg-1 { 
     background-color: #1abc9c; /* Green */
     color: #ffffff;

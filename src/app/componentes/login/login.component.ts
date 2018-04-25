@@ -15,8 +15,9 @@ export class LoginComponent implements OnInit {
   clave= '';
   progreso: number;
   progresoMensaje="esperando..."; 
-  logeando=true;
+  logeando:boolean;
   ProgresoDeAncho:string;
+  Mensajes:string;
 
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
@@ -25,57 +26,68 @@ export class LoginComponent implements OnInit {
     private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
+      this.logeando = true;
 
   }
 
   ngOnInit() {
   }
 
-  Entrar() {
+ 
+  spinerLogin(){
+    
+    setTimeout(function(){ 
+      // errorEmail.className = errorEmail.className.replace("show", "");
+      this.logeando=false;
+      this.Entrar()
+     }, 3000);
+  }
+
+  Entrar(){
+    
     if (this.usuario === 'admin' && this.clave === 'admin') {
+      this.MostarMensaje("Bienvendio!!!"+ this.usuario,true);
       this.router.navigate(['/Principal']);
     }
+    else{
+      this.MostarMensaje("Error en usuario o contraseña",false);
+       
+    }
   }
-  MoverBarraDeProgreso() {
-    
-    this.logeando=false;
-    this.clase="progress-bar progress-bar-danger progress-bar-striped active";
-    this.progresoMensaje="NSA spy..."; 
-    let timer = TimerObservable.create(200, 50);
-    this.subscription = timer.subscribe(t => {
-      console.log("inicio");
-      this.progreso=this.progreso+1;
-      this.ProgresoDeAncho=this.progreso+20+"%";
-      switch (this.progreso) {
-        case 15:
-        this.clase="progress-bar progress-bar-warning progress-bar-striped active";
-        this.progresoMensaje="Verificando ADN..."; 
-          break;
-        case 30:
-          this.clase="progress-bar progress-bar-Info progress-bar-striped active";
-          this.progresoMensaje="Adjustando encriptación.."; 
-          break;
-          case 60:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando Info del dispositivo..";
-          break;
-          case 75:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
-          break;
-          case 85:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Instalando KeyLogger..";
-          break;
-          
-        case 100:
-          console.log("final");
-          this.subscription.unsubscribe();
-          this.Entrar();
-          break;
-      }     
-    });
-    //this.logeando=true;
-  }
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    let errorEmail = document.getElementById("msjLogin");
+    if(ganador)
+      {
+        errorEmail.innerHTML = (`<h4 id='msjLogin'><kbd class= label-success>${mensaje} <i class="far fa-smile"></i> </kbd></h4>`);
+      }else{
+        errorEmail.innerHTML = (`<h4 id='msjLogin'><kbd class= label-danger>${mensaje} <i class="far fa-frown"></i></kbd></h4>`);
+      }
+    var modelo=this;
+    setTimeout(function(){ 
+      // errorEmail.className = errorEmail.className.replace("show", "");
+      errorEmail.innerHTML = "";
+     }, 3000);
+    console.info("objeto",errorEmail);
+  
+   } 
+
+
+
+    //   login() {
+    //     this.loading = true;
+    //     this.authenticationService.login(this.model.username, this.model.password)
+    //         .subscribe(
+    //             data => {
+    //                 this.router.navigate([this.returnUrl]);
+    //             },
+    //             error => {
+    //                 this.alertService.error(error);
+    //                 this.loading = false;
+    //             });
+    // }
+    //}
+
 
 }

@@ -1,0 +1,57 @@
+/*
+.container {
+    color:#EFDA54;
+    height: 400px;
+    display: block;
+
+}
+.fondo{
+	box-shadow: 1px 1px 18px 2px #000;
+
+	background-color:#0A5699;
+	padding-left: 10px;
+	width: 328px;
+    height: 342px;
+    margin: auto;
+    border-radius: 10px;
+    border-color: #EFDA54;
+
+} */
+
+img{
+    height: 95px;
+    /* width: 50px; */
+}
+.container-fluid {
+    color:#EFDA54;
+    height: 400px;
+    display: block;
+
+}
+.resultados{
+    margin-left: 60px;
+}
+.fondo{
+	box-shadow: 1px 1px 18px 2px #000;
+	background-color:#0A5699;
+	padding-left: 7px;
+	width: 340px;
+    height: 569px;
+    margin: auto;
+    border-radius: 10px;
+    border-color: #EFDA54;
+
+}
+
+.Ganador {
+    background-color: #059F2F;
+}
+.Perdedor {
+    background-color: #FF0000;
+}
+.Empate {
+    background-color: #FF8800;
+}
+/* .row{
+    background: whitesmoke;
+} */
