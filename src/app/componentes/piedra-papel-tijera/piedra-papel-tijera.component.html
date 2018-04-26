@@ -9,23 +9,33 @@
         <h1>{{nuevoJuego.nombre}}</h1>
       </div>
     <!-- <button type="button" (click)="generarSonido()"  class="btn btn-info glyphicon glyphicon-volume-up"> Sonido</button> -->
-      <button *ngIf="botonComenzarVerificar == true"  (click)="generarPartida()"  class="btn btn-info btn-lg"><i class="far fa-check-circle"></i> Comenzar</button>
-      <button *ngIf="botonComenzarVerificar == false" (click)="generarPartida()" class="btn btn-success btn-lg"><i class="fas fa-play"></i></button>
-      <button *ngIf="botonSiguiente == true" type="button" (click)="generarPartida()"  class="btn btn-info btn-lg"> <i class="fas fa-step-forward"></i></button>
-      <img src="../../../assets/imagenes/radio.gif" *ngIf="botonComenzarVerificar == false" >
-      <!-- <label *ngIf="labelPuntos == true" class="bg-success" >Puntos: {{puntos}}</label> -->
-      <h3 *ngIf="labelPuntos == true" ><kbd class= "label-success">Puntos <i class="far fa-hand-point-right"></i> {{puntos}}</kbd></h3>
+      <button *ngIf="botonComenzarVerificar == true"  (click)="primerJuego()"  class="btn btn-success btn-lg">Comenzar <i class="fas fa-gamepad"></i></button>
+      <h3 *ngIf="labelPuntos == true" >
+        <kbd class= "label-info">Vos <i class="far fa-hand-point-right"></i> {{puntos}}</kbd>
+        VS
+        <kbd class= "label-danger"> {{puntosRival}} <i class="far fa-hand-point-left"></i> Rival</kbd>
+      </h3>
+      <h3 *ngIf="labelGanaste == true" >
+          <kbd class= "label-success"> Sos un capo, Ganaste! <i class="far fa-thumbs-up"></i></kbd>
+      </h3>
+      <h3 *ngIf="labelPerdiste == true" >
+          <kbd class= "label-danger"> Perdedor!! <i class="far fa-thumbs-down"></i></kbd>
+      </h3>
       <div class="imagenes">
       <br>
       <div class="img">
-        <button class="btn btn-default btn-xs" (click)="generarPartida(1)"><img src="../../../assets/PPT/img/alexPiedra.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="generarPartida(2)"><img src="../../../assets/PPT/img/alexPapel.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="generarPartida(3)"><img src="../../../assets/PPT/img/alexTijera.png" ></button>
+        <button id="botonPiedra" disabled class="btn btn-default btn-xs" (click)="generarPartida(1)"><img src="../../../assets/PPT/img/a1.png" ></button>
+        <button id="botonPapel"  disabled class="btn btn-default btn-xs"(click)="generarPartida(2)"><img src="../../../assets/PPT/img/a2.png" ></button>
+        <button id="botonTijera" disabled class="btn btn-default btn-xs"(click)="generarPartida(3)"><img src="../../../assets/PPT/img/a3.png" ></button>
       </div>
       <br>
-       <div class="resultados">
-          <img src="../../../assets/PPT/img/alexNada2.png"  >
-          <img src="../../../assets/PPT/img/maloNada2.png"  >
+       <div *ngIf="mostrarGif == true" class="gif">
+          <img src="../../../assets/PPT/img/alex.gif"  >
+          <img src="../../../assets/PPT/img/malo.gif"  >
+        </div>
+        <div class="resultados">
+          <img id="resultado1"  >
+          <img id="resultado2" >
         </div>
       </div>
       <section id="msjPuntos"></section>

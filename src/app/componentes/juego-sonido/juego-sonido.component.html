@@ -10,54 +10,58 @@
       </div>
     <!-- <button type="button" (click)="generarSonido()"  class="btn btn-info glyphicon glyphicon-volume-up"> Sonido</button> -->
       <button *ngIf="botonComenzarVerificar == true"  (click)="generarSonido()"  class="btn btn-info btn-lg"><i class="far fa-check-circle"></i> Comenzar</button>
-      <button *ngIf="botonComenzarVerificar == false" (click)="repetirSonido()" class="btn btn-success btn-lg"><i class="fas fa-play"></i></button>
-      <button *ngIf="botonSiguiente == true" type="button" (click)="generarSonido()"  class="btn btn-info btn-lg"> <i class="fas fa-step-forward"></i></button>
+      <button *ngIf="botonNuevoJuego == true"  (click)="jugarDeNuevo()"  class="btn btn-info btn-lg"><i class="far fa-check-circle"></i> Nuevo juego</button>
+      <button *ngIf="botonRepetir == true" (click)="repetirSonido()" class="btn btn-success btn-lg"><i class="fas fa-play"></i></button>
+      <button *ngIf="botonGenerar == true" (click)="generarSonido()"  class="btn btn-info btn-lg"> <i class="fas fa-step-forward"></i></button>
       <img src="../../../assets/imagenes/radio.gif" *ngIf="botonComenzarVerificar == false" >
       <!-- <label *ngIf="labelPuntos == true" class="bg-success" >Puntos: {{puntos}}</label> -->
       <h3 *ngIf="labelPuntos == true" ><kbd class= "label-success">Puntos <i class="far fa-hand-point-right"></i> {{puntos}}</kbd></h3>
+      <h3 *ngIf="labelGanaste == true" >
+          <kbd class= "label-success"> Fin del juego, tu puntaje es {{puntos}}  <i class="far fa-thumbs-up"></i></kbd>
+      </h3>
       <div class="imagenes">
       <br>
       <div class="img1-5">
-        <button class="btn btn-default btn-xs" (click)="verificar('abeja')"><img src="../../../assets/sonidos/abeja2.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="verificar('burro')"><img src="../../../assets/sonidos/burro2.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="verificar('caballo')"><img src="../../../assets/sonidos/caballo2.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="verificar('cabra')"><img src="../../../assets/sonidos/cabra2.png" ></button>
-        <button class="btn btn-default btn-xs"(click)="verificar('camello')"><img src="../../../assets/sonidos/camello2.png" ></button>
+        <button id="botonAnimal1" class="btn btn-default btn-xs" (click)="verificar('abeja')"><img src="../../../assets/sonidos/abeja2.png" ></button>
+        <button id="botonAnimal2" class="btn btn-default btn-xs"(click)="verificar('burro')"><img src="../../../assets/sonidos/burro2.png" ></button>
+        <button id="botonAnimal3" class="btn btn-default btn-xs"(click)="verificar('caballo')"><img src="../../../assets/sonidos/caballo2.png" ></button>
+        <button id="botonAnimal4" class="btn btn-default btn-xs"(click)="verificar('cabra')"><img src="../../../assets/sonidos/cabra2.png" ></button>
+        <button id="botonAnimal5" class="btn btn-default btn-xs"(click)="verificar('camello')"><img src="../../../assets/sonidos/camello2.png" ></button>
       </div>
       <div class="img6-10">
-          <button class="btn btn-default btn-xs"(click)="verificar('cebra')"><img src="../../../assets/sonidos/cebra2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('cerdo')"><img src="../../../assets/sonidos/cerdo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('cuervo')"><img src="../../../assets/sonidos/cuervo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('delfin')"><img src="../../../assets/sonidos/delfin2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('elefante')"><img src="../../../assets/sonidos/elefante2.png" ></button>
+          <button id="botonAnimal6" class="btn btn-default btn-xs"(click)="verificar('cebra')"><img src="../../../assets/sonidos/cebra2.png" ></button>
+          <button id="botonAnimal7" class="btn btn-default btn-xs"(click)="verificar('cerdo')"><img src="../../../assets/sonidos/cerdo2.png" ></button>
+          <button id="botonAnimal8" class="btn btn-default btn-xs"(click)="verificar('cuervo')"><img src="../../../assets/sonidos/cuervo2.png" ></button>
+          <button id="botonAnimal9" class="btn btn-default btn-xs"(click)="verificar('delfin')"><img src="../../../assets/sonidos/delfin2.png" ></button>
+          <button id="botonAnimal10" class="btn btn-default btn-xs"(click)="verificar('elefante')"><img src="../../../assets/sonidos/elefante2.png" ></button>
       </div>
       <div class="img11-15">
-          <button class="btn btn-default btn-xs"(click)="verificar('foca')"><img src="../../../assets/sonidos/foca2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('gallo')"><img src="../../../assets/sonidos/gallo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('gato')"><img src="../../../assets/sonidos/gato2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('grillo')"><img src="../../../assets/sonidos/grillo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('lechuza')"><img src="../../../assets/sonidos/lechuza2.png" ></button>
+          <button id="botonAnimal11" class="btn btn-default btn-xs"(click)="verificar('foca')"><img src="../../../assets/sonidos/foca2.png" ></button>
+          <button id="botonAnimal12" class="btn btn-default btn-xs"(click)="verificar('gallo')"><img src="../../../assets/sonidos/gallo2.png" ></button>
+          <button id="botonAnimal13" class="btn btn-default btn-xs"(click)="verificar('gato')"><img src="../../../assets/sonidos/gato2.png" ></button>
+          <button id="botonAnimal14" class="btn btn-default btn-xs"(click)="verificar('grillo')"><img src="../../../assets/sonidos/grillo2.png" ></button>
+          <button id="botonAnimal15" class="btn btn-default btn-xs"(click)="verificar('lechuza')"><img src="../../../assets/sonidos/lechuza2.png" ></button>
       </div>
       <div class="img16-20">
-          <button class="btn btn-default btn-xs"(click)="verificar('leon')"><img src="../../../assets/sonidos/leon2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('lobo')"><img src="../../../assets/sonidos/lobo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('mono')"><img src="../../../assets/sonidos/mono2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('oso')"><img src="../../../assets/sonidos/oso2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('oveja')"><img src="../../../assets/sonidos/oveja2.png" ></button>
+          <button id="botonAnimal16" class="btn btn-default btn-xs"(click)="verificar('leon')"><img src="../../../assets/sonidos/leon2.png" ></button>
+          <button id="botonAnimal17" class="btn btn-default btn-xs"(click)="verificar('lobo')"><img src="../../../assets/sonidos/lobo2.png" ></button>
+          <button id="botonAnimal18" class="btn btn-default btn-xs"(click)="verificar('mono')"><img src="../../../assets/sonidos/mono2.png" ></button>
+          <button id="botonAnimal19" class="btn btn-default btn-xs"(click)="verificar('oso')"><img src="../../../assets/sonidos/oso2.png" ></button>
+          <button id="botonAnimal20" class="btn btn-default btn-xs"(click)="verificar('oveja')"><img src="../../../assets/sonidos/oveja2.png" ></button>
       </div>
       <div class="img21-26">
-          <button class="btn btn-default btn-xs"(click)="verificar('pajaro')"><img src="../../../assets/sonidos/pajaro2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('pato')"><img src="../../../assets/sonidos/pato2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('pavo')"><img src="../../../assets/sonidos/pavo2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('perro')"><img src="../../../assets/sonidos/perro2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('pinguino')"><img src="../../../assets/sonidos/pinguino2.png" ></button>
+          <button id="botonAnimal21" class="btn btn-default btn-xs"(click)="verificar('pajaro')"><img src="../../../assets/sonidos/pajaro2.png" ></button>
+          <button id="botonAnimal22" class="btn btn-default btn-xs"(click)="verificar('pato')"><img src="../../../assets/sonidos/pato2.png" ></button>
+          <button id="botonAnimal23" class="btn btn-default btn-xs"(click)="verificar('pavo')"><img src="../../../assets/sonidos/pavo2.png" ></button>
+          <button id="botonAnimal24" lass="btn btn-default btn-xs"(click)="verificar('perro')"><img src="../../../assets/sonidos/perro2.png" ></button>
+          <button id="botonAnimal25" class="btn btn-default btn-xs"(click)="verificar('pinguino')"><img src="../../../assets/sonidos/pinguino2.png" ></button>
       </div>
       <div class="img26-30">
-          <button class="btn btn-default btn-xs"(click)="verificar('rana')"><img src="../../../assets/sonidos/rana2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('raton')"><img src="../../../assets/sonidos/raton2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('serpiente')"><img src="../../../assets/sonidos/serpiente2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('tigre')"><img src="../../../assets/sonidos/tigre2.png" ></button>
-          <button class="btn btn-default btn-xs"(click)="verificar('vaca')"><img src="../../../assets/sonidos/vaca2.png" ></button>
+          <button id="botonAnimal26" class="btn btn-default btn-xs"(click)="verificar('rana')"><img src="../../../assets/sonidos/rana2.png" ></button>
+          <button id="botonAnimal27" class="btn btn-default btn-xs"(click)="verificar('raton')"><img src="../../../assets/sonidos/raton2.png" ></button>
+          <button id="botonAnimal28" lass="btn btn-default btn-xs"(click)="verificar('serpiente')"><img src="../../../assets/sonidos/serpiente2.png" ></button>
+          <button id="botonAnimal29" class="btn btn-default btn-xs"(click)="verificar('tigre')"><img src="../../../assets/sonidos/tigre2.png" ></button>
+          <button id="botonAnimal30" class="btn btn-default btn-xs"(click)="verificar('vaca')"><img src="../../../assets/sonidos/vaca2.png" ></button>
       </div>
 
       </div>

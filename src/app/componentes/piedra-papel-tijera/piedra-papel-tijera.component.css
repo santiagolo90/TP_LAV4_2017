@@ -31,16 +31,22 @@ img{
 .resultados{
     margin-left: 60px;
 }
+.gif{
+    margin-left: 60px;
+}
 .fondo{
 	box-shadow: 1px 1px 18px 2px #000;
 	background-color:#0A5699;
 	padding-left: 7px;
 	width: 340px;
-    height: 569px;
+    height: 455px;
     margin: auto;
     border-radius: 10px;
     border-color: #EFDA54;
 
+}
+.btn-group-lg >.btn, .btn-lg {
+    width: 98%;
 }
 
 .Ganador {
