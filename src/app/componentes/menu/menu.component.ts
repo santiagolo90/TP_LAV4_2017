@@ -1,5 +1,5 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '../../../../node_modules/@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -24,6 +24,9 @@ export class MenuComponent implements OnInit {
         break;
       case 'PPT':
           this.router.navigate(['/Juegos/PPT']);
+        break;
+        case 'PPTMasListado':
+          this.router.navigate(['/Juegos/PPTMasListado']);
         break;
       case 'Sonido':
           this.router.navigate(['/Juegos/Sonido']);

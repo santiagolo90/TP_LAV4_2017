@@ -1,5 +1,5 @@
 
-import { Component, OnInit ,Input,Output,EventEmitter} from '../../../../node_modules/@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
 
 @Component({

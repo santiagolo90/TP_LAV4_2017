@@ -1,8 +1,8 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JuegoAnagrama } from '../../clases/juego-anagrama';
 
-import {Subscription} from "../../../../node_modules/rxjs";
-import {TimerObservable} from "../../../../node_modules/rxjs/observable/TimerObservable";
+import {Subscription} from "rxjs";
+import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
   selector: 'app-anagrama',
   templateUrl: './anagrama.component.html',

@@ -55,7 +55,7 @@ export class JuegoPiedraPapelTijera extends Juego {
                 if (this.eleccionRandom == 2) {
                     this.resultado = null;
                 }
-                if (this.eleccionRandom ==32) {
+                if (this.eleccionRandom ==3) {
                     this.resultado = false;
                 }
               break;

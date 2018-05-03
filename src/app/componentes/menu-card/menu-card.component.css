@@ -1,57 +1,65 @@
+/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
+
+
+.fondo{
+    background-image: url("../../../assets/imagenes/fondo2.gif")
+}
+
+  .example-card {
+    max-width: 400px;
+  }
+
+  .example-header-image {
+    background-image: url('http://gameworldscamp.com/wp-content/uploads/2017/01/WebCircle_3.png');
+    background-size: cover;
+  }
+
+  /*Boton*/
+button{
+    background-color: #0A5699;
+    color:#EFDA54;
+    width: 100%;
+    border-radius: 20px;
+}
+button:hover {
+    background-color: rgb(6, 48, 85);
+    color:rgb(150, 137, 52);
+    width: 100%;
+    border-radius: 20px;
+}
+button:active {
+    background-color: rgb(10, 61, 105);
+    color:rgb(187, 171, 66);
+    width: 100%;
+    border-radius: 20px;
+}
+
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+
     max-width: 300px;
-   height: 100%;
+    height: 100%;
     margin: 10px;
     padding-bottom: 10px;
-    float: left;
-  background-color: #DEF3A6;
+    /* float: left; */
     text-align: center;
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
-img {
-    border-radius: 5px 5px 0 0;
-    width: 200px;
-    height: 200px;
-}/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
+ .mat-card:not([class*=mat-elevation-z]) {
+    /* box-shadow: 1px 1px 18px 2px #000; */
+    /* border-radius: 15px; */
+    /* background-color:#0A5699; */
+    /* color:#EFDA54; */
+    
+} 
+/* .mat-card-subtitle[_ngcontent-c3] {
+    color:#efda54b5;
+} */
+
+.mat-card:not([class*=mat-elevation-z]) {
+    background-color:transparent;
+    box-shadow: 0 0px 0px 0px transparent, 0 0px 0px 0 transparent, 0 0px 0px 0 transparent;
 }
 
 
-.button{
-    margin-left: 1px;
-    display: inline-block;
-    width: 90%;
-    padding: 5px 15px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
 
-    border: none;
-    outline: 0;
- 
-    padding: 8px;
-    color: white;
-   /* background-color: #000;*/
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {background-color: #3e8e41}
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+  /*color: 'lightgreen'*/

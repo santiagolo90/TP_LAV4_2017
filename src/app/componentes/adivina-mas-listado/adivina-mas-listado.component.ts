@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Juego } from '../../clases/juego';
 @Component({
   selector: 'app-adivina-mas-listado',
@@ -14,7 +14,9 @@ export class AdivinaMasListadoComponent implements OnInit {
   }
    tomarJuegoTerminado(juego: Juego)
   {
+    //this.listadoParaCompartir.push(juego);
+    console.log("juego",juego);
     this.listadoParaCompartir.push(juego);
-   // console.info("en app",this.listadoParaCompartir);
+   //console.info("en app",this.listadoParaCompartir);
   }
 }

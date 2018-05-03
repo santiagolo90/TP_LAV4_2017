@@ -52,10 +52,16 @@ export class JuegoAgilidad extends  Juego {
 
 	calcular(numeroAux:number):boolean{
 
-		if(this.resultado == numeroAux)
-			this.respuesta =true;
-		else
-			this.respuesta =false;
+        if(this.resultado == numeroAux)
+        {
+            this.gano =true;
+            this.respuesta =true;
+        }
+		else{
+            this.gano =false;
+            this.respuesta =false;
+        }
+			
 
 		return this.respuesta;
 

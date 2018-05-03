@@ -1,5 +1,8 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '../../../../node_modules/@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',

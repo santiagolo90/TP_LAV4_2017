@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { Juego } from '../../clases/juego';
 import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera';
 import { DISABLED } from '@angular/forms/src/model';
@@ -9,6 +9,7 @@ import { DISABLED } from '@angular/forms/src/model';
   styleUrls: ['./piedra-papel-tijera.component.css']
 })
 export class PiedraPapelTijeraComponent implements OnInit {
+  @Output()enviarJuego :EventEmitter<any>= new EventEmitter<any>();
   
   nuevoJuego : JuegoPiedraPapelTijera;
   elecccionJugador:number =0
@@ -29,6 +30,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   }
   primerJuego(){
     //this.generarPartida(Math.floor(Math.random() * 3) + 1);
+    this.nuevoJuego = new JuegoPiedraPapelTijera();
     this.botonComenzarVerificar = false;
     let botonPiedra:any = document.getElementById("botonPiedra");
     let botonPapel:any = document.getElementById("botonPapel");
@@ -42,7 +44,16 @@ export class PiedraPapelTijeraComponent implements OnInit {
   generarPartida(eleccionAux:number) {
     //this.audio = new Audio('demo');
     //this.sonido("../../../assets/PPT/sonido/PPT.ogg");
+    let botonPiedra:any = document.getElementById("botonPiedra");
+    let botonPapel:any = document.getElementById("botonPapel");
+    let botonTijera:any = document.getElementById("botonTijera");
+    
+    botonPiedra.disabled =true;
+    botonPapel.disabled =true;
+    botonTijera.disabled =true;
     this.sonido("../../../assets/PPT/sonido/PPT.ogg");
+    
+
     setTimeout( () => {
       this.botonComenzarVerificar = false;
       this.labelPuntos = true;
@@ -60,10 +71,12 @@ export class PiedraPapelTijeraComponent implements OnInit {
    
   }
   sonido(pathAudio:string){
-    this.audio.remove();
-    this.audio.pause();
     this.audio.src = pathAudio;
     this.audio.play();
+    // this.audio.remove();
+    // this.audio.pause();
+    // this.audio.src = pathAudio;
+    // this.audio.play();
   }
 
   resultados(){
@@ -71,11 +84,14 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if (this.nuevoJuego.verificar() ==true) {
       this.puntos ++;
       if (this.puntos == 3) {
+        this.nuevoJuego.gano =true;
+        this.enviarJuego.emit(this.nuevoJuego);
         this.botonComenzarVerificar = false;
         this.labelGanaste =true;
         this.labelPuntos = false;
         this.puntosRival =0;
         this.puntos=0;
+        this.nuevoJuego = new JuegoPiedraPapelTijera();
       }
       // if (this.puntosRival > 0) {
       //   this.puntosRival --
@@ -85,11 +101,14 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if (this.nuevoJuego.verificar() ==false) {
       this.puntosRival ++;
       if (this.puntosRival == 3) {
+        this.nuevoJuego.gano =false;
+        this.enviarJuego.emit(this.nuevoJuego);
         this.botonComenzarVerificar = false;
         this.labelPerdiste =true;
         this.labelPuntos = false;
         this.puntosRival =0;
         this.puntos=0;
+        this.nuevoJuego = new JuegoPiedraPapelTijera();
         
       }
       // if (this.puntos > 0) {
@@ -140,21 +159,19 @@ export class PiedraPapelTijeraComponent implements OnInit {
     }
 
     var modelo=this;
-    setTimeout(function(){ 
+     setTimeout( () => {
       // errorEmail.className = errorEmail.className.replace("show", "");
       errorEmail.innerHTML = "";
       resultado1.src = "";
       resultado2.src = "";
-      
-
-     }, 3000,);
+    }, 2000 );
 
     setTimeout( () => {
       this.mostrarGif = true
       botonPiedra.disabled =false;
       botonPapel.disabled =false;
       botonTijera.disabled =false;
-    }, 3000 );
+    }, 2500 );
   
    } 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JugadoresService } from '../../servicios/jugadores.service';
 @Component({
   selector: 'app-jugadores-listado',

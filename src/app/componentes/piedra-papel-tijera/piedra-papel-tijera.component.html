@@ -3,11 +3,14 @@
 
 <body style="background-color: whitesmoke">
   <h2></h2>
+  
   <div class="container-fluid">
     <div class="fondo">
       <div style="text-align:center;">
         <h1>{{nuevoJuego.nombre}}</h1>
+        <button routerLink="/Juegos/PPTMasListado" style="color:#EFDA54;" class="btn btn-link">Listados</button>
       </div>
+      
     <!-- <button type="button" (click)="generarSonido()"  class="btn btn-info glyphicon glyphicon-volume-up"> Sonido</button> -->
       <button *ngIf="botonComenzarVerificar == true"  (click)="primerJuego()"  class="btn btn-success btn-lg">Comenzar <i class="fas fa-gamepad"></i></button>
       <h3 *ngIf="labelPuntos == true" >

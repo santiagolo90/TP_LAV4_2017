@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-error',

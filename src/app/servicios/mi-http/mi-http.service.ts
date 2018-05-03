@@ -1,9 +1,9 @@
 import { log } from 'util';
-import { Injectable } from '../../../../node_modules/@angular/core';
+import { Injectable } from '@angular/core';
 
-import { Http, Response } from '../../../../node_modules/@angular/http';
+import { Http, Response } from '@angular/http';
 
-import { Observable } from '../../../../node_modules/rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';

@@ -1,70 +1,128 @@
-<div class="container-fluid" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:90%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body class="fondo">
+  <div class="container" >
+    <div class="row" >
+      <div class="col-sm-4">
+          <div class="card">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+              </mat-card-header>
+              <img mat-card-image src="./assets/imagenes/cerebro.jpg" class="img-circle" alt="Avatar">
+              <mat-card-content>
+                  <mat-card-title><h3>Velocidad aritmética</h3></mat-card-title>
+                  <!-- <mat-card-subtitle>Juego de agilidad mental</mat-card-subtitle> -->
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button (click)="Juego('Agilidad')" >Jugar</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+      </div>
   
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
+      <div class="col-sm-4">
+          <div class="card">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src="./assets/imagenes/ppt.jpg" class="img-circle" alt="Avatar" >
+                <mat-card-content>
+                    <mat-card-title><h3>Piedra Papel o Tijera</h3></mat-card-title>
+                    <!-- <mat-card-subtitle>Juega contra la máquina</mat-card-subtitle> -->
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button (click)="Juego('PPT')" >Jugar</button>
+                </mat-card-actions>
+            </mat-card>
+          </div>
+      </div>
+  
+      <div class="col-sm-4">
+          <div class="card">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src="./assets/imagenes/adivina.png" class="img-circle"  alt="Avatar" >
+                <mat-card-content>
+                    <mat-card-title><h3>Adivina el número</h3></mat-card-title>
+                    <!-- <mat-card-subtitle>Juega de estrategia</mat-card-subtitle> -->
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button  (click)="Juego('Adivina')" >Jugar</button>
+                </mat-card-actions>
+            </mat-card>
+          </div>
+      </div>
     </div>
   
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:90%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
-    </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:90%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
-    </div>
-
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/anagrama.gif" alt="Avatar" style="width:90%">
-      <h1>Anagrama</h1>
-      <br>
-      <br>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Anagrama')">Jugar</button></p>
-    
-    </div>
-
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/juegoSonido.jpg" alt="Avatar" style="width:90%">
-      <h1>Mi Juego </h1>
-      <p class="title">Sonido</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Sonido')">Jugar</button></p>
-    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                  </mat-card-header>
+                  <img mat-card-image src="./assets/imagenes/juegoSonido.jpg" class="img-circle"  alt="Avatar" >
+                  <mat-card-content>
+                      <mat-card-title><h3>¿Que sonido es?</h3></mat-card-title>
+                      <!-- <mat-card-subtitle>Juego de agilidad auditiva</mat-card-subtitle> -->
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-raised-button (click)="Juego('Sonido')" >Jugar</button>
+                  </mat-card-actions>
+              </mat-card>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <!--  -->
+                  <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src="./assets/imagenes/anagrama.gif" class="img-circle"   alt="Avatar" >
+                <mat-card-content>
+                    <mat-card-title><h3>Adivina el Anagrama</h3></mat-card-title>
+                    <!-- <mat-card-subtitle>Juego de agilidad mental</mat-card-subtitle> -->
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button  (click)="Juego('Anagrama')" >Jugar</button>
+                </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+        <!-- <div class="col-sm-4">
+            <div class="card">
+            </div>
+        </div> -->
     </div>
   </div>
+</body>
+
+  <!-- <div class="container">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">LIKE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div> -->

@@ -26,33 +26,116 @@
         </ul>
     </div>
   </nav-->
-  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-                                  
-          </button>
-          <a class="navbar-brand" routerLink="/Principal">Inicio</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a routerLink="/Juegos">Menú de Juegos</a></li>
-                <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-                <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
-                <li><a  (click)="Juego('PPT')">PPT</a></li>
-                <li><a  (click)="Juego('Sonido')">Sonido</a></li>
-                <li><a  (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
-                <li><a  (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-                  <li><a href="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-                </ul>
-        </div>
-      </div>
-    </nav>
-      
-   
+<div class="container">
+  <!-- navbar agrega un poco de margen -->
+  <!-- navbar-inverse da un color  -->
+  <!--   navbar-fixed-top lo agrega siempre arriba 
+      <nav class="navbar navbar-fixed-top">-->
+  <nav class="navbar navbar-default ">
+    <!-- container-fluid agrega un poco de padding -->
+    <!-- navbar-header -->
+    <div class="navbar-header">
+      <!-- navbar-toggle boton mobile -->
+      <button type="button" class="navbar-toggle pull-right " data-toggle="collapse" data-target="#myNavbar">
+        <a>Menu
+          <i class="fa fa-bars"></i>
+        </a>
+      </button>
+      <!-- navbar-brand es el lugar para el logo  -->
+      <a routerLink="/Principal">
+        <img class="logo"  src="./assets/imagenes/Logo.gif" alt="">
+      </a>
+    </div>
+    <!-- collapse oculta -->
+    <!-- navbar-collapse -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- nav ordena y colores con hover-->
+      <!--navbar-nav de costado  -->
+      <!--navbar-right acomoda a la derecha   -->
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active">
+          <a routerLink="/Juegos">Menú de Juegos</a>
+        </li>
+        <li>
+          <a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a>
+        </li>
+        <li>
+          <a (click)="Juego('Agilidad')">Agilidad</a>
+        </li>
+        <li>
+          <a (click)="Juego('PPT')">PPT</a>
+        </li>
+        <li>
+          <a (click)="Juego('Sonido')">Sonido</a>
+        </li>
+        <!-- <li>
+            <a (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
+        </li>
+        <li>
+            <a (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a>
+        </li> -->
+        <!-- <li>
+            <a (click)="Juego('PPTMasListado')">PPT+listado</a>
+        </li> -->
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/Login">
+            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+<!-- 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </button>
+      <a class="navbar-brand" routerLink="/Principal">Inicio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a routerLink="/Juegos">Menú de Juegos</a>
+        </li>
+        <li>
+          <a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a>
+        </li>
+        <li>
+          <a (click)="Juego('Agilidad')">Agilidad</a>
+        </li>
+        <li>
+          <a (click)="Juego('PPT')">PPT</a>
+        </li>
+        <li>
+          <a (click)="Juego('Sonido')">Sonido</a>
+        </li>
+        <li>
+          <a (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
+        </li>
+        <li>
+          <a (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span> Mis Datos</a>
+        </li>
+        <li>
+          <a href="/Login">
+            <span class="glyphicon glyphicon-log-out"></span> Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->

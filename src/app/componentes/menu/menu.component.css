@@ -1,0 +1,20 @@
+.navbar{
+    background-color:whitesmoke;
+    border: none;
+}
+.navbar-nav  li a {
+    text-align: right;
+    color: #0A5699;
+}
+.navbar-nav  li a:hover {
+    color:rgb(175, 160, 60) !important;
+
+}
+.navbar-nav  li a:active {
+    color:rgb(175, 160, 60);
+
+}
+.logo:hover{
+     background-color: #e7e7e7;
+
+}

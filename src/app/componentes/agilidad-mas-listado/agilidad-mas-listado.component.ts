@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Juego } from '../../clases/juego';
 @Component({
   selector: 'app-agilidad-mas-listado',
