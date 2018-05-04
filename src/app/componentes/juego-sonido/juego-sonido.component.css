@@ -17,11 +17,13 @@
     margin-top: 10px;
     padding-bottom: 12px;
 } */
+
 img{
     height: 50px;
     width: 50px;
 }
 .container-fluid {
+    background-color: whitesmoke;
     color:#EFDA54;
     height: 400px;
     display: block;

@@ -64,10 +64,25 @@ import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
+
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { PiedraPapelTijeraMasListadoComponent } from './componentes/piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
+import { JuegoSonidoMasListadoComponent } from './componentes/juego-sonido-mas-listado/juego-sonido-mas-listado.component';
+import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
 
+//Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyDEeSv6JqaGjHF5iHXAX3TE26Sz0otvIOU",
+  authDomain: "tpsaladejuegos-7e83c.firebaseapp.com",
+  databaseURL: "https://tpsaladejuegos-7e83c.firebaseio.com",
+  projectId: "tpsaladejuegos-7e83c",
+  storageBucket: "",
+  messagingSenderId: "755312307567"
+};
 
 
 @NgModule({
@@ -99,7 +114,9 @@ import { PiedraPapelTijeraMasListadoComponent } from './componentes/piedra-papel
     PiedraPapelTijeraComponent,
     JuegoSonidoComponent,
     TatetiComponent,
-    PiedraPapelTijeraMasListadoComponent
+    PiedraPapelTijeraMasListadoComponent,
+    JuegoSonidoMasListadoComponent,
+    AnagramaMasListadoComponent
   ],
   imports: [
     BrowserModule,
@@ -111,6 +128,9 @@ import { PiedraPapelTijeraMasListadoComponent } from './componentes/piedra-papel
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

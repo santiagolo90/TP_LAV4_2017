@@ -24,9 +24,11 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 
 //MIOS
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { AnagramaMasListadoComponent } from '../componentes/anagrama-mas-listado/anagrama-mas-listado.component';
 import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { PiedraPapelTijeraMasListadoComponent } from '../componentes/piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
 import { JuegoSonidoComponent } from '../componentes/juego-sonido/juego-sonido.component';
+import { JuegoSonidoMasListadoComponent } from '../componentes/juego-sonido-mas-listado/juego-sonido-mas-listado.component';
 
 
 // declaro donde quiero que se dirija
@@ -48,7 +50,9 @@ children:
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'AnagramaMasListado' , component: AnagramaMasListadoComponent},
       {path: 'Sonido' , component: JuegoSonidoComponent},
+      {path: 'SonidoMasListado' , component: JuegoSonidoMasListadoComponent},
       {path: 'PPT' , component: PiedraPapelTijeraComponent},
       {path: 'PPTMasListado' , component: PiedraPapelTijeraMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},

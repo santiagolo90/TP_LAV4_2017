@@ -14,6 +14,7 @@ export class JuegoAgilidad extends  Juego {
 
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Velocidad aritmetica",gano,jugador);
+        this.jugador =localStorage.getItem("jugador");
      
    
       }

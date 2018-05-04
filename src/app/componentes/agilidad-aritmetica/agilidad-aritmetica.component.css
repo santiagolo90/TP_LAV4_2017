@@ -3,8 +3,12 @@ ul{
 }
 .container {
     background-color:#0A5699;
+    box-shadow: 1px 1px 18px 2px #000;
+    border-radius: 10px;
     color:#EFDA54;
-    height: 250px;
+    /* height: 250px; */
+    height: 430px;
+    width: 370px;
 }
 
 .bordeNumeros {

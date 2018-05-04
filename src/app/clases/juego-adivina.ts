@@ -5,8 +5,9 @@ export class JuegoAdivina extends  Juego {
     numeroIngresado = 0;
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Adivina el número",gano,jugador);
+        this.jugador =localStorage.getItem("jugador");
      
-    
+      
       
       }
     public verificar() {

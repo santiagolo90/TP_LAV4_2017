@@ -32,6 +32,7 @@
     </form>
   </div>
 </div> -->
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -51,21 +52,52 @@
               </div>
           <!-- <input type="checkbox" checked="checked"> Recordar mis datos -->
         <div class="form-group">
-            <button (click)="Entrar()" class="btn btn-primary btn-success btn-block">Entrar</button>
-            <img *ngIf="logeando == false" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <button (click)="iniciarSesion()" class="btn btn-primary btn-success btn-block">Entrar</button>
+            <!-- <img *ngIf="logeando == false" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+            <h4 *ngIf="spiner == true" ><p><img src="./assets/imagenes/mate/cargando.gif" >Espere</p></h4>
         </div>
+
         <div class="form-group">
-          <button type="button" class="aceptbtn btn btn-info btn-lg" routerLink="/Registro" >Registrarse</button>
+          <!-- <button type="button" class="aceptbtn btn btn-info btn-lg" routerLink="/Registro" >Registrarse</button> -->
+          <button type="button" class="aceptbtn btn btn-info btn-lg" onclick="document.getElementById('id01').style.display='block'">Registrarse</button>
+
           <button type="button" class="cancelbtn btn btn-danger btn-lg" routerLink="/Principal">Cancelar</button>
           <!-- <span class="psw">Te olvidaste <a href="#">la clave?</a></span> -->
           <section id="msjLogin"></section>
         </div>
        
       </form>
-      
   </div> 
 
 </div>
 
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content animate">
+      <div class="container">
+        
+        <div class="form-group">
+            <label for="usuario"><b>Usuario</b></label>
+            <input type="email" placeholder="Usuario" class="form-control"  [(ngModel)]="usuarioRegistro" name="usuarioRegistor">
+        </div>
+        <div class="form-group">
+            <label for="pass"><b>Clave</b></label>
+            <input type="password" placeholder="Clave" class="form-control" [(ngModel)]="claveRegistro" name="claveRegistro">
+        </div>
+
+        <div class="form-group">
+            <label ><b>Repita la clave</b></label>
+            <input type="password" placeholder="Repita la clave" class="form-control" [(ngModel)]="claveRegistro2" name="claveRegistro2">
+        </div>
+        <div class="clearfix">
+            <h4 *ngIf="spinerRegistro == true" ><p><img src="./assets/imagenes/mate/cargando.gif" >Espere</p></h4>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger btn-lg">Cancelar</button>
+          <button type="button" class="btn btn-info btn-lg" (click)="Registrar()" >Registrarme</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    
 
 

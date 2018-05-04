@@ -4,10 +4,11 @@ export class JuegoSonido extends Juego {
     sonidoAleatorio:string;
     public arraySonidosUsados =[];
     respuesta:string;
-    contador:number;
+    cantArray:number =0;
 
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Que animal Es?",gano,jugador);
+        this.jugador =localStorage.getItem("jugador");
       }
 
       arraySonidos : Array <any> = [
@@ -44,16 +45,16 @@ export class JuegoSonido extends Juego {
     ];
 
     public asignarSonido() {  
-        this.contador =this.arraySonidos.length -1;
-        console.log("contador"+this.contador);
-        console.log("arraySonidos.length"+this.arraySonidos.length);
-        console.log("arraySonidosUsados.length"+this.arraySonidosUsados.length);
-        
-             
         let random = Math.floor(Math.random() * this.arraySonidos.length);
         this.sonidoAleatorio = this.arraySonidos[random].nombre;
+        console.log("animal : "+this.sonidoAleatorio);
         this.arraySonidosUsados.push(this.arraySonidos[random]);
         this.arraySonidos.splice(random, 1);
+        console.log("arraySonidos.length : "+this.arraySonidos.length);
+        console.log("arraySonidosUsados.length: "+this.arraySonidosUsados.length);
+        
+        this.cantArray = this.arraySonidos.length;
+        console.log("cantArray: "+this.cantArray);
         // console.log(random);
         // console.log(this.sonidoAleatorio);
         // console.log(this.arraySonidosUsados);

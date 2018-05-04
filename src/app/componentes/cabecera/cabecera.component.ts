@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
@@ -8,18 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { 
+  loginActual:boolean;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { 
     
     
   }
 
   ngOnInit() {
+    if (localStorage.getItem("jugador") =="" || localStorage.getItem("jugador")== null) {
+      this.loginActual =true;
+    }
+    else{
+      this.loginActual =false;
+    }
     
   }
 
-  prueba()
+  cerrarSesion()
   {
-    alert("Cerrando")
+    localStorage.clear();
+    this.router.navigate(['/Login']);
   }
   
 

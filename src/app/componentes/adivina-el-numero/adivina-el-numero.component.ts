@@ -34,6 +34,7 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.enviarJuego.emit(this.nuevoJuego);
       this.MostarMensaje("Sos un Genio!!!",true);
       this.nuevoJuego.numeroSecreto=0;
+      this.nuevoJuego = new JuegoAdivina();
 
     }else{
 
@@ -57,9 +58,13 @@ export class AdivinaElNumeroComponent implements OnInit {
           case 6:
           mensaje="Afortunado en el amor";
           break;
-      
-        default:
-            mensaje="Ya le erraste "+ this.contador+" veces";
+          case 7:
+          mensaje="Van "+ this.contador+" te queda un intento";
+          break;
+          case 8:
+          mensaje="Perdiste!!! ";
+          this.enviarJuego.emit(this.nuevoJuego);
+          this.nuevoJuego = new JuegoAdivina();
           break;
       }
       this.MostarMensaje("#"+this.contador+" "+mensaje+" ayuda :"+this.nuevoJuego.retornarAyuda());

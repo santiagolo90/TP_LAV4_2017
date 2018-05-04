@@ -31,17 +31,17 @@
                 <li>
                     <!-- <button routerLink="/Registro" button type="button" class="btn btn-link">
                         <span class="glyphicon glyphicon-user text-info"></span><span class="text-info"> Registrarse</span></button> -->
-                        <a type="button" class="btn btn-link" routerLink="/Registro"> <span class="glyphicon glyphicon-user"></span> Registrarse</a>
+                        <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Registro"> <span class="glyphicon glyphicon-user"></span> Registrarse</a>
                 </li>
                 <li>
                     <!-- <button routerLink="/Login" button type="button" class="btn btn-link">
                         <span class="glyphicon glyphicon-log-in text-info"></span><span class="text-info"> Ingresar</span></button> -->
-                        <a type="button" class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-in"></span>  Ingresar</a>
+                        <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-in"></span>  Ingresar</a>
                 </li>
                 <li>
                     <!-- <button (click)="prueba()" button type="button" class="btn btn-link">
                         <span class="glyphicon glyphicon-log-out text-info"></span><span class="text-info"> Cerrar sesion</span></button> -->
-                        <a type="button"  class="btn btn-link" (click)="prueba()"> <span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
+                        <a *ngIf="loginActual == false" type="button"  class="btn btn-link" (click)="cerrarSesion()"> <span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
                 </li>
             </ul>
         </div>

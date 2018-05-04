@@ -68,6 +68,9 @@
         <li>
           <a (click)="Juego('Sonido')">Sonido</a>
         </li>
+        <li>
+          <a (click)="Juego('Anagrama')">Anagrama</a>
+        </li>
         <!-- <li>
             <a (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
         </li>
@@ -80,9 +83,14 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <!-- <li>
+          <a routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li> -->
         <li>
-          <a routerLink="/Login">
-            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+            <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-in"></span>  Ingresar</a>
+        </li>
+        <li>
+            <a *ngIf="loginActual == false" type="button"  class="btn btn-link" (click)="cerrarSesion()"> <span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
         </li>
       </ul>
     </div>

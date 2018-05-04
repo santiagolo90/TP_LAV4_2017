@@ -9,6 +9,7 @@ export class JuegoAnagrama extends Juego {
 
 	constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Anagrama",gano,jugador);
+        this.jugador =localStorage.getItem("jugador");
       }
 
       arrayPalabras : Array <any> = [

@@ -5,6 +5,7 @@
 	<div class="fondo">
 		<div style="text-align:left;">
 			<h1 >{{nuevoJuego.nombre}}!</h1>
+			<button routerLink="/Juegos/AnagramaMasListado" style="color:#EFDA54;" class="btn btn-link">Listados</button>
 			<h2>Su palabra es: {{nuevoJuego.palabraAnagrama}}  </h2>
 		</div>
 		<div class="row">
@@ -21,9 +22,10 @@
 			</div>
 		</div>
 		<div class="col-sm-12" >
-			<h4 [hidden]="spiner"><p><img src="./assets/imagenes/mate/cargando.gif" >Esperando numero...</p></h4>
-			<h4 [hidden]="!gano">usted adivino el número</h4>
-			<h4 [hidden]="gano">usted aún no gano </h4>
+			<h4 [hidden]="spiner"><p><img src="./assets/imagenes/mate/cargando.gif" >Esperando...</p></h4>
+			<!-- <h4 [hidden]="!gano">Sos un capo. Ganaste</h4>
+			<h4 [hidden]="gano">usted aún no gano </h4> -->
+			<section id="msjPuntos"></section>
 		</div>
 	</div>
 </div>

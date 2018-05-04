@@ -9,6 +9,7 @@ export class JuegoPiedraPapelTijera extends Juego {
 
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Piedra-Papel-Tijera",gano,jugador);
+        this.jugador =localStorage.getItem("jugador");
       }
 
       arrayPalabras : Array <any> = [

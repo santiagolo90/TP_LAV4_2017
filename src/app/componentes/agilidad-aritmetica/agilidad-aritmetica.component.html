@@ -40,48 +40,69 @@
 
 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div style="text-align:center">
-  <h1>
-    {{nuevoJuego.nombre}}!
-  </h1>
-  <button routerLink="/Juegos/AgilidadaMasListado"  class="btn btn-link">Listados</button>
- </div>
-<h2></h2>
+<div class="fondo">
 
-<form name="juego">
-  <div class="container">
-    <ul>
-    <li>
-      <div class="bordeNumeros">
-        <img src="{{nuevoJuego.numeroUnoIMG}}" >
-        <img src="{{nuevoJuego.operadorIMG}}" >
-        <img src="{{nuevoJuego.numeroDosIMG}}" >
+  <h2></h2>
+
+  <form name="juego">
+    <div class="container">
+      <div style="text-align:center">
+        <h1>
+          {{nuevoJuego.nombre}}!
+        </h1>
+        <button  routerLink="/Juegos/AgilidadaMasListado" style="color:#EFDA54;" class="btn btn-link">Listados</button>
       </div>
-
- 
-    </li>
-    <li>
-      <div class="form-group">
-        <label for="numeroIngresado">Respuesta</label>
-        <input [(ngModel)]="miNumero" placeholder="ingrese numero" name="numeroIngresado" type="number" class="form-control" style="width:40%"/>
-      </div>
-     
-    </li>
-    <li>
-      <h4 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h4>
-    </li>
-    <li>
-      <h4 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h4>
-    </li>
-    <li>
-      <h4 [hidden]="spiner"><p><img src="./assets/imagenes/mate/cargando.gif" >Esperando numero...</p></h4>
-      
-
-      <h4 [hidden]="!gano">usted adivino el número</h4>
-      <h4 [hidden]="gano">usted aún no gano </h4>
-    </li>
-</ul>
-  </div>
+      <ul>
+        <li>
+          <div class="bordeNumeros">
+            <img src="{{nuevoJuego.numeroUnoIMG}}">
+            <img src="{{nuevoJuego.operadorIMG}}">
+            <img src="{{nuevoJuego.numeroDosIMG}}">
+          </div>
 
 
-</form>
+        </li>
+        <li>
+          <div class="form-group">
+            <label for="numeroIngresado">Respuesta</label>
+            <input [(ngModel)]="miNumero" placeholder="ingrese numero" name="numeroIngresado" type="number" class="form-control" style="width:40%"
+            />
+          </div>
+
+        </li>
+        <li>
+          <h4 [hidden]="ocultarVerificar">
+            <button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button>
+          </h4>
+        </li>
+        <li>
+          <h4 [hidden]="!ocultarVerificar">
+            <button (click)="NuevoJuego()" class="btn btn-info btn-lg">Nuevo</button>
+          </h4>
+        </li>
+        <li>
+          <!-- <h4 [hidden]="spiner">
+            <p>
+              <img src="./assets/imagenes/mate/cargando.gif">Esperando numero...</p>
+          </h4> -->
+
+
+          <!-- <h4 [hidden]="!gano">usted adivino el número</h4>
+          <h4 [hidden]="gano">usted aún no gano </h4> -->
+        </li>
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4 [hidden]="spiner">
+          <p>
+            <img src="./assets/imagenes/mate/cargando.gif">Esperando numero...</p>
+        </h4>
+      <section [hidden]="!spiner" id="msjPuntos"></section>
+    </div>
+
+
+  </form>
+
+</div>

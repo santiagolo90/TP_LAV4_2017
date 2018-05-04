@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { Juego } from '../../clases/juego';
 import { JuegoSonido } from '../../clases/juego-sonido';
 
@@ -8,6 +8,7 @@ import { JuegoSonido } from '../../clases/juego-sonido';
   styleUrls: ['./juego-sonido.component.css']
 })
 export class JuegoSonidoComponent implements OnInit {
+  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
   //public audio = document.getElementById('demo');
   nuevoJuego : JuegoSonido;
   botonComenzarVerificar:boolean = true
@@ -22,7 +23,11 @@ export class JuegoSonidoComponent implements OnInit {
   nombre:String;
   audio = new Audio();
   Mensajes:string;
-  contador:number = 0
+  contador:number = 0;
+  contadorGanados:number = 30;
+  spiner:boolean= false;
+
+
 
 
   constructor() {
@@ -32,6 +37,7 @@ export class JuegoSonidoComponent implements OnInit {
    jugarDeNuevo(){
     this.nuevoJuego = new JuegoSonido();
     this.contador =0;
+    this.contadorGanados =30;
     this.puntos =0;
     this.labelGanaste = false;
     this.prenderBotones();
@@ -40,34 +46,29 @@ export class JuegoSonidoComponent implements OnInit {
 
   generarSonido() {
     //this.audio = new Audio('demo');
-
+    this.prenderBotones();
     this.nuevoJuego.asignarSonido();
     this.botonRepetir = true;
     this.botonGenerar = true;
     this.botonComenzarVerificar = false;
     this.botonNuevoJuego = false;
+    this.spiner =true;
     // this.botonSiguiente = true;
     this.labelPuntos = true;
     this.sonidoRepetir = "../../../assets/sonidos/"+this.nuevoJuego.sonidoAleatorio+".ogg";
     this.sonido("../../../assets/sonidos/"+this.nuevoJuego.sonidoAleatorio+".ogg")
-    // let audio = new Audio();
-    // audio.src = "../../../assets/sonidos/"+this.nuevoJuego.sonidoAleatorio+".ogg";
-    // this.sonidoRepetir = "../../../assets/sonidos/"+this.nuevoJuego.sonidoAleatorio+".ogg";
-    // audio.pause();
-    // audio.load();
-    // audio.play();
-    //this.sonidoAleatorio();
-    if (this.nuevoJuego.arraySonidosUsados.length==30) {
 
-      this.botonNuevoJuego = true;
-      this.botonRepetir = false;
-      this.botonGenerar = false;
-      this.botonComenzarVerificar = false;
+    // if (this.nuevoJuego.arraySonidosUsados.length==30) {
 
-      this.labelPuntos = false;
-      this.apagarBotones();
-      return this.labelGanaste = true;
-    }
+    //   this.botonNuevoJuego = true;
+    //   this.botonRepetir = false;
+    //   this.botonGenerar = false;
+    //   this.botonComenzarVerificar = false;
+
+    //   this.labelPuntos = false;
+    //   this.apagarBotones();
+    //   return this.labelGanaste = true;
+    // }
    
   }
   sonido(pathAudio:string){
@@ -93,35 +94,72 @@ export class JuegoSonidoComponent implements OnInit {
   verificar(animalSeleccionado:string){
     this.nuevoJuego.respuesta = animalSeleccionado;
     if (this.nuevoJuego.verificar() ==true) {
-      this.contador ++;
-
-
       this.puntos ++;
+      this.contadorGanados --;
       // this.sonido("../../../assets/sonidos/yes.ogg")
       this.MostarMensaje("Muy Bien!!! +1",true);
-      
-       let audio = new Audio();
-       audio.src = "../../../assets/sonidos/yes.ogg";
-       audio.pause();
-       audio.load();
-       audio.play();
-       window.setTimeout(function(){}, 1000);
-       if (this.nuevoJuego.contador==0) {
+      this.sonido("../../../assets/sonidos/yes.ogg");;
 
+       if (this.contadorGanados ==0) {
+        this.nuevoJuego.gano=true;
+        this.enviarJuego.emit(this.nuevoJuego);
+        this.nuevoJuego = new JuegoSonido();
+        
         this.botonNuevoJuego = true;
         this.botonRepetir = false;
         this.botonGenerar = false;
         this.botonComenzarVerificar = false;
+        this.spiner =false;
   
         this.labelPuntos = false;
         this.apagarBotones();
+
+        // this.botonNuevoJuego = true;
+        // this.botonRepetir = false;
+        // this.botonGenerar = false;
+        // this.botonComenzarVerificar = false;
+  
+        // this.labelPuntos = false;
+        // this.apagarBotones();
         return this.labelGanaste = true;
       }
-      this.generarSonido();
+      setTimeout( () => {
+        this.generarSonido();
+      }, 1000 );
     }
     else{
       this.puntos --;
-      this.MostarMensaje("Mal!!! -1",false);
+      this.contador ++;
+      switch (this.contador) {
+          case 1:
+          this.MostarMensaje("Primer intento!!! -1",false);
+          break;
+
+          case 2:
+          this.MostarMensaje("Segundo intento.!!! -1",false);
+          break;
+
+          case 3:
+          this.MostarMensaje("Ultimo intento!!! -1",false);
+          break;
+
+          case 4:
+          this.MostarMensaje("Perdiste!!!",false);
+          this.nuevoJuego.gano=false;
+          this.enviarJuego.emit(this.nuevoJuego);
+          this.nuevoJuego = new JuegoSonido();
+          
+          this.botonNuevoJuego = true;
+          this.botonRepetir = false;
+          this.botonGenerar = false;
+          this.botonComenzarVerificar = false;
+          this.spiner =false;
+    
+          this.labelPuntos = false;
+          this.apagarBotones();
+          break;  
+      }
+      
       this.sonido("../../../assets/sonidos/no.ogg")
       // let audio = new Audio();
       // audio.src = "../../../assets/sonidos/no.ogg";
@@ -136,9 +174,9 @@ export class JuegoSonidoComponent implements OnInit {
     let errorEmail = document.getElementById("msjPuntos");
     if(ganador)
       {
-        errorEmail.innerHTML = (`<h1 id='msjPuntos'><kbd class= label-success>${mensaje} <i class="far fa-smile"></i> </kbd></h1>`);
+        errorEmail.innerHTML = (`<h3 id='msjPuntos'><kbd class= label-success>${mensaje} <i class="far fa-smile"></i> </kbd></31>`);
       }else{
-        errorEmail.innerHTML = (`<h1 id='msjPuntos'><kbd class= label-danger>${mensaje} <i class="far fa-frown"></i></kbd></h1>`);
+        errorEmail.innerHTML = (`<h3 id='msjPuntos'><kbd class= label-danger>${mensaje} <i class="far fa-frown"></i></kbd></h3>`);
       }
     var modelo=this;
     setTimeout(function(){ 

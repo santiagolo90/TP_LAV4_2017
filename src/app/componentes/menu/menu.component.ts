@@ -7,11 +7,17 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+  loginActual:boolean;
   constructor(private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem("jugador") =="" || localStorage.getItem("jugador")== null) {
+      this.loginActual =true;
+    }
+    else{
+      this.loginActual =false;
+    }
   }
 
   Juego(tipo: string) {
@@ -25,8 +31,11 @@ export class MenuComponent implements OnInit {
       case 'PPT':
           this.router.navigate(['/Juegos/PPT']);
         break;
-        case 'PPTMasListado':
-          this.router.navigate(['/Juegos/PPTMasListado']);
+        case 'Anagrama':
+        this.router.navigate(['/Juegos/Anagrama']);
+        break;
+        case 'AnagramaMasListado':
+        this.router.navigate(['/Juegos/AnagramaMasListado']);
         break;
       case 'Sonido':
           this.router.navigate(['/Juegos/Sonido']);
@@ -38,6 +47,11 @@ export class MenuComponent implements OnInit {
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
     }
+  }
+  cerrarSesion()
+  {
+    localStorage.clear();
+    this.router.navigate(['/Login']);
   }
 
 }

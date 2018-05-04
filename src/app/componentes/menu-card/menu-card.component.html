@@ -1,4 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+
 <body class="fondo">
   <div class="container" >
     <div class="row" >
@@ -15,7 +17,10 @@
                   <!-- <mat-card-subtitle>Juego de agilidad mental</mat-card-subtitle> -->
               </mat-card-content>
               <mat-card-actions>
-                <button mat-raised-button (click)="Juego('Agilidad')" >Jugar</button>
+                <!-- <button mat-raised-button (click)="Juego('Agilidad')" >Jugar</button> -->
+
+                <button mat-fab (click)="Juego('Agilidad')" ><i class="fas fa-gamepad fa-2x"></i></button>
+
               </mat-card-actions>
             </mat-card>
           </div>
@@ -34,7 +39,8 @@
                     <!-- <mat-card-subtitle>Juega contra la máquina</mat-card-subtitle> -->
                 </mat-card-content>
                 <mat-card-actions>
-                  <button mat-raised-button (click)="Juego('PPT')" >Jugar</button>
+                  <!-- <button mat-raised-button (click)="Juego('PPT')" >Jugar</button> -->
+                  <button mat-fab (click)="Juego('PPT')" ><i class="fas fa-gamepad fa-2x"></i></button>
                 </mat-card-actions>
             </mat-card>
           </div>
@@ -53,7 +59,8 @@
                     <!-- <mat-card-subtitle>Juega de estrategia</mat-card-subtitle> -->
                 </mat-card-content>
                 <mat-card-actions>
-                  <button mat-raised-button  (click)="Juego('Adivina')" >Jugar</button>
+                  <!-- <button mat-raised-button  (click)="Juego('Adivina')" >Jugar</button> -->
+                  <button mat-fab (click)="Juego('Adivina')" ><i class="fas fa-gamepad fa-2x"></i></button>
                 </mat-card-actions>
             </mat-card>
           </div>
@@ -74,7 +81,8 @@
                       <!-- <mat-card-subtitle>Juego de agilidad auditiva</mat-card-subtitle> -->
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button (click)="Juego('Sonido')" >Jugar</button>
+                    <!-- <button mat-raised-button (click)="Juego('Sonido')" >Jugar</button> -->
+                    <button mat-fab (click)="Juego('Sonido')" ><i class="fas fa-gamepad fa-2x"></i></button>
                   </mat-card-actions>
               </mat-card>
             </div>
@@ -92,7 +100,8 @@
                     <!-- <mat-card-subtitle>Juego de agilidad mental</mat-card-subtitle> -->
                 </mat-card-content>
                 <mat-card-actions>
-                  <button mat-raised-button  (click)="Juego('Anagrama')" >Jugar</button>
+                  <!-- <button mat-raised-button  (click)="Juego('Anagrama')" >Jugar</button> -->
+                  <button mat-fab (click)="Juego('Anagrama')" ><i class="fas fa-gamepad fa-2x"></i></button>
                 </mat-card-actions>
             </mat-card>
           </div>

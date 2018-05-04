@@ -8,12 +8,15 @@
     <h1 >
       {{nuevoJuego.nombre}}!
     </h1>
+    <h4 >
+        del 1 al 100
+      </h4>
     <button routerLink="/Juegos/AdivinaMasListado" style="color:#EFDA54;" class="btn btn-link">Listados</button>
    </div>
   <h2></h2>
   <form name="juego">
     <div *ngIf="nuevoJuego.numeroSecreto!=0"  class="mostrarInput">
-      <label>ingrese numero:  </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+      <label>ingrese numero:   </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
        <h1>{{nuevoJuego.numeroIngresado}}  </h1>
     </div>
       <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>

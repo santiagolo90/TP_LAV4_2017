@@ -2,6 +2,7 @@
 
 
 .fondo{
+
     background-image: url("../../../assets/imagenes/fondo2.gif")
 }
 
@@ -15,7 +16,21 @@
   }
 
   /*Boton*/
-button{
+  button{
+    background-color: #0A5699;
+    color:#EFDA54;
+    
+}
+button:hover {
+    background-color: rgb(6, 48, 85);
+    color:rgb(150, 137, 52);
+}
+button:active {
+    background-color: rgb(10, 61, 105);
+    color:rgb(187, 171, 66);
+
+} 
+/* button{
     background-color: #0A5699;
     color:#EFDA54;
     width: 100%;
@@ -32,7 +47,7 @@ button:active {
     color:rgb(187, 171, 66);
     width: 100%;
     border-radius: 20px;
-}
+} */
 
 .card {
 

@@ -81,6 +81,9 @@ export class PiedraPapelTijeraComponent implements OnInit {
 
   resultados(){
     //this.nuevoJuego.respuesta = animalSeleccionado;
+    if (this.nuevoJuego.verificar() ==null) {
+      this.MostarMensaje("Empate!!!",null);
+    }
     if (this.nuevoJuego.verificar() ==true) {
       this.puntos ++;
       if (this.puntos == 3) {
@@ -116,9 +119,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
       // }
       this.MostarMensaje("Perdiste!!! -1",false);
     }
-    if (this.nuevoJuego.verificar() ==null) {
-      this.MostarMensaje("Empate!!!",null);
-    }
+
   }
 
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean) {
