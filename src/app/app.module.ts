@@ -65,6 +65,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { PiedraPapelTijeraMasListadoComponent } from './componentes/piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
 import { JuegoSonidoMasListadoComponent } from './componentes/juego-sonido-mas-listado/juego-sonido-mas-listado.component';
@@ -127,6 +130,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatGridListModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,

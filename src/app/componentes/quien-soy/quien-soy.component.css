@@ -21,6 +21,12 @@ p {font-size: 14px;}
     color:#EFDA54;
     /* color: #ffffff; */
 }
+.btn-primary{
+    color:#EFDA54;
+}
+.btn-primary:hover {
+    color:rgb(180, 165, 66);
+}
 .bg-2 { 
     /* background-color: #474e5d; Dark Blue */
     background-color: #37474f;

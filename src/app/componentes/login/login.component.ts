@@ -37,11 +37,16 @@ export class LoginComponent implements OnInit {
       this.logeando = true;
 
   }
+  autoCompletar(){
+    this.usuario = "user@user.com";
+    this.clave = "abc123";
+    this.iniciarSesion()
+  }
 
   async iniciarSesion(){
     if(this.usuario == null || this.clave == null || this.clave == '' || this.usuario == '')
     {
-      return this.MostarMensaje("Debe completar los campos",false);
+      return this.MostarMensaje("Debe completar los campos",false,'msjLogin');
     }
     //let spinner = this.cargando();
     this.spiner= true;
@@ -53,7 +58,7 @@ export class LoginComponent implements OnInit {
                   console.log(result);
                   this.spiner= false;
                   localStorage.setItem("jugador",result.email);
-                  this.MostarMensaje("Bienvenido "+result.email,true)
+                  this.MostarMensaje("Bienvenido "+result.email,true,'msjLogin')
                   this.router.navigate(['/Principal']);
                   
                 })
@@ -63,13 +68,13 @@ export class LoginComponent implements OnInit {
                   //spinner.dismiss();
                   this.spiner= false;
                   if (error.message == "The email address is badly formatted." ) {
-                    return this.MostarMensaje("El correo tiene un formate incorrecto",false);
+                    return this.MostarMensaje("El correo tiene un formate incorrecto",false,'msjLogin');
                   }
                   if (error.message == "The password is invalid or the user does not have a password." ) {
-                    return this.MostarMensaje("Error en la clave",false);
+                    return this.MostarMensaje("Error en la clave",false,'msjLogin');
                   }
                   if (error.message == "There is no user record corresponding to this identifier. The user may have been deleted." ) {
-                    return this.MostarMensaje("El usuario no existe o fue eliminado",false);
+                    return this.MostarMensaje("El usuario no existe o fue eliminado",false,'msjLogin');
                   }
                   setTimeout(() => {
 
@@ -87,7 +92,7 @@ export class LoginComponent implements OnInit {
           await this.MiAuth.auth.createUserWithEmailAndPassword(this.usuarioRegistro,this.claveRegistro)
           .then(result =>{
   
-            this.MostarMensaje("Bienvenido "+this.usuarioRegistro,true)
+            this.MostarMensaje("Se registro correctamente "+this.usuarioRegistro,true,'msj')
             this.spinerRegistro= false;
             document.getElementById('id01').style.display='none'
             //this.router.navigate(['/Login']);
@@ -96,10 +101,10 @@ export class LoginComponent implements OnInit {
            console.log(error);
            this.spinerRegistro= false;
            if (error.message == "The email address is badly formatted." ) {
-            return this.MostarMensaje("El correo tiene un formate incorrecto",false);
+            return this.MostarMensaje("El correo tiene un formate incorrecto",false,'msjLogin');
            }
            if (error.message == "The email address is already in use by another account." ) {
-            return this.MostarMensaje("El correo ya se encuentra registado",false);
+            return this.MostarMensaje("El correo ya se encuentra registado",false,'msjRegistro');
            }
           //  setTimeout(() => {
           //  this.showAlert(error.message, "Error al registrarse");
@@ -107,13 +112,13 @@ export class LoginComponent implements OnInit {
           })
           
         }else{
-          return this.MostarMensaje("Las clave no coinciden",false);
+          return this.MostarMensaje("Las clave no coinciden",false,'msjRegistro');
         }
       }else{
-        return this.MostarMensaje("Debe ingresar un correo",false);
+        return this.MostarMensaje("Debe ingresar un correo",false,'msjRegistro');
       }
     }else{
-        return this.MostarMensaje("Contraseña no debe ser menor a 6 caracteres",false);
+        return this.MostarMensaje("Contraseña no debe ser menor a 6 caracteres",false,'msjRegistro');
       }
   }
 
@@ -150,14 +155,14 @@ export class LoginComponent implements OnInit {
   //   }
   // }
 
-  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false,tipo:string) {
     this.Mensajes=mensaje;    
-    let errorEmail = document.getElementById("msjLogin");
+    let errorEmail = document.getElementById(tipo);
     if(ganador)
       {
-        errorEmail.innerHTML = (`<h4 id='msjLogin'><kbd class= label-success>${mensaje} <i class="far fa-smile"></i> </kbd></h4>`);
+        errorEmail.innerHTML = (`<h4 id='${tipo}'><kbd class= label-success>${mensaje} <i class="far fa-smile"></i> </kbd></h4>`);
       }else{
-        errorEmail.innerHTML = (`<h4 id='msjLogin'><kbd class= label-danger>${mensaje} <i class="far fa-frown"></i></kbd></h4>`);
+        errorEmail.innerHTML = (`<h4 id='${tipo}'><kbd class= label-danger>${mensaje} <i class="far fa-frown"></i></kbd></h4>`);
       }
     var modelo=this;
     setTimeout(function(){ 

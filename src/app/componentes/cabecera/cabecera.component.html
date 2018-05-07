@@ -19,7 +19,10 @@
             <!-- navbar-brand es el lugar para el logo  -->
             <a class="" href="./">
                     <img src="./assets/imagenes/Logo.gif"  alt="">
+                    
             </a>
+            <!-- <label class="L"><b>Usuario</b></label> -->
+            <section id="msjRegistro"></section>
         </div>
         <!-- collapse oculta -->
         <!-- navbar-collapse -->
@@ -31,12 +34,15 @@
                 <li>
                     <!-- <button routerLink="/Registro" button type="button" class="btn btn-link">
                         <span class="glyphicon glyphicon-user text-info"></span><span class="text-info"> Registrarse</span></button> -->
-                        <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Registro"> <span class="glyphicon glyphicon-user"></span> Registrarse</a>
+                        <!-- <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Registro"> <span class="glyphicon glyphicon-user"></span> Registrarse</a> -->
+                        <a *ngIf="loginActual == true" type="button" class="btn btn-link" onclick="document.getElementById('id01').style.display='block'"  > <span class="glyphicon glyphicon-user"></span> Registrarse</a>
+                        
                 </li>
                 <li>
                     <!-- <button routerLink="/Login" button type="button" class="btn btn-link">
                         <span class="glyphicon glyphicon-log-in text-info"></span><span class="text-info"> Ingresar</span></button> -->
-                        <a *ngIf="loginActual == true" type="button" class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-in"></span>  Ingresar</a>
+                        <a *ngIf="loginActual == true" type="button"  class="btn btn-link" routerLink="/Login"> <span class="glyphicon glyphicon-log-out"></span> Ingresar</a>
+
                 </li>
                 <li>
                     <!-- <button (click)="prueba()" button type="button" class="btn btn-link">
@@ -44,13 +50,59 @@
                         <a *ngIf="loginActual == false" type="button"  class="btn btn-link" (click)="cerrarSesion()"> <span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
                 </li>
             </ul>
+            
+            
         </div>
+        
 
 </nav>
 
 
-    <div class="panel panel-default">
+<div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content animate">
+          <div class="container">
+            
+            <div class="form-group">
+                <label for="usuario"><b>Usuario</b></label>
+                <input type="email" placeholder="Usuario" class="form-control"  [(ngModel)]="usuarioRegistro" name="usuarioRegistor">
+            </div>
+            <div class="form-group">
+                <label for="pass"><b>Clave</b></label>
+                <input type="password" placeholder="Clave" class="form-control" [(ngModel)]="claveRegistro" name="claveRegistro">
+            </div>
+    
+            <div class="form-group">
+                <label ><b>Repita la clave</b></label>
+                <input type="password" placeholder="Repita la clave" class="form-control" [(ngModel)]="claveRegistro2" name="claveRegistro2">
+            </div>
+            <div class="clearfix">
+                <h4 *ngIf="spinerRegistro == true" ><p><img src="./assets/imagenes/mate/cargando.gif" >Espere</p></h4>
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger btn-lg">Cancelar</button>
+              <button type="button" class="btn btn-info btn-lg" (click)="Registrar()" >Registrarme</button>
+            </div>
+            <section id="msjLogin"></section>
+          </div>
+        </form>
+        
+      </div>
+
+  
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+  
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+
+    <!-- <div class="panel panel-default">
         <div class="hero-text">
             <h1 routerLink='/Juegos' style="font-size:50px">Sala de Juegos</h1>
         </div>
-    </div>
+    </div> -->
