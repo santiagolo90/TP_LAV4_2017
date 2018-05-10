@@ -1,0 +1,62 @@
+img{
+    height: 95px;
+    width: 95px;
+}
+.container-fluid {
+    background-color: whitesmoke;
+    color:#EFDA54;
+    height: 400px;
+    display: block;
+
+}
+.fondo{
+	box-shadow: 1px 1px 18px 2px #000;
+
+	background-color:#0A5699;
+	padding-left: 7px;
+	width: 365px;
+    height: 569px;
+    margin: auto;
+    border-radius: 10px;
+    border-color: #EFDA54;
+	
+}
+
+td {
+    border: 6px solid #222;
+  }
+  td::after {
+    content: '';
+    display: block;
+  }
+  td {
+    border: 6px solid #222;
+  }
+  td:first-of-type {
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+  td:nth-of-type(2) {
+    border-top-color: transparent;
+  }
+  td:nth-of-type(3) {
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+  tr:nth-of-type(3) td {
+    border-bottom-color: transparent;
+  }
+
+
+
+.btn:hover {
+
+    	box-shadow: 1px 1px 18px 2px #000;
+}
+
+.Ganador {
+    background-color: #059F2F;
+}
+.Perdedor {
+    background-color: #FF0000;
+}

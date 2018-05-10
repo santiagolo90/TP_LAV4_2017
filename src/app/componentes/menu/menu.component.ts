@@ -46,6 +46,9 @@ export class MenuComponent implements OnInit {
       case 'AgilidadaMasListado':
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+        case 'Tateti':
+          this.router.navigate(['/Juegos/Tateti']);
+        break;
     }
   }
   cerrarSesion()

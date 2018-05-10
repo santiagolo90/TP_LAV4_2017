@@ -29,6 +29,8 @@ import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/p
 import { PiedraPapelTijeraMasListadoComponent } from '../componentes/piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
 import { JuegoSonidoComponent } from '../componentes/juego-sonido/juego-sonido.component';
 import { JuegoSonidoMasListadoComponent } from '../componentes/juego-sonido-mas-listado/juego-sonido-mas-listado.component';
+import {TatetiComponent} from '../componentes/tateti/tateti.component'
+import {TatetiMasListadoComponent} from '../componentes/tateti-mas-listado/tateti-mas-listado.component'
 
 
 // declaro donde quiero que se dirija
@@ -55,6 +57,8 @@ children:
       {path: 'SonidoMasListado' , component: JuegoSonidoMasListadoComponent},
       {path: 'PPT' , component: PiedraPapelTijeraComponent},
       {path: 'PPTMasListado' , component: PiedraPapelTijeraMasListadoComponent},
+      {path: 'Tateti' , component: TatetiComponent},
+      {path: 'TatetiMasListado' , component: TatetiMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
 },

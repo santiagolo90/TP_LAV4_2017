@@ -77,6 +77,7 @@ import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { TatetiMasListadoComponent } from './componentes/tateti-mas-listado/tateti-mas-listado.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDEeSv6JqaGjHF5iHXAX3TE26Sz0otvIOU",
@@ -119,7 +120,8 @@ export const firebaseConfig = {
     TatetiComponent,
     PiedraPapelTijeraMasListadoComponent,
     JuegoSonidoMasListadoComponent,
-    AnagramaMasListadoComponent
+    AnagramaMasListadoComponent,
+    TatetiMasListadoComponent
   ],
   imports: [
     BrowserModule,

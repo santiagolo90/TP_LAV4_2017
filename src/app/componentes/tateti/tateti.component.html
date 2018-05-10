@@ -1,3 +1,50 @@
-<p>
-  tateti works!
-</p>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+<body style="background-color: whitesmoke">
+  <h2></h2>
+  <div class="container-fluid">
+    <div class="fondo">
+      <div style="text-align:center;">
+        <h1>{{nuevoJuego.nombre}}</h1>
+        <button  routerLink="/Juegos/TatetiMasListado" style="color:#EFDA54;" class="btn btn-link">Listados</button>
+      </div>
+      <button *ngIf="botonComenzar == true"  (click)="juegoInicio()"  class="btn btn-info btn-lg"><i class="far fa-check-circle"></i> Comenzar</button>
+      <button *ngIf="botonJugardeNuevo == true"  (click)="juegoOtraVez()"  class="btn btn-success btn-lg"><i class="far fa-check-circle"></i> Jugar otra vez</button>
+      <br>
+      <img src="../../../assets/imagenes/radio.gif" *ngIf="spiner == true" >
+      <!-- <label *ngIf="labelPuntos == true" class="bg-success" >Puntos: {{puntos}}</label> -->
+      <h2 *ngIf="labelGanaste == true" >
+          <kbd class= "label-success"> Final ganador: {{ganador}} <i class="far fa-thumbs-up"></i></kbd>
+      </h2>
+      <h2 *ngIf="labelPerdiste == true" >
+          <kbd class= "label-danger"> Final ganador: {{ganador}} <i class="far fa-thumbs-down"></i></kbd>
+      </h2>
+      <h2 *ngIf="labelEmpate == true" >
+          <kbd class= "label-warning"> Final empate <i class="far fa-meh"></i></kbd>
+      </h2>
+
+      <table class="table-center ">
+
+              <tr>
+              <td><button disabled id="boton1" (click)="jugar(1)" class="btn btn-link btn-xs" ><img id="BtnImg1" src="{{img1}}"  ></button></td>
+              <td><button disabled id="boton2" (click)="jugar(2)" class="btn btn-link btn-xs"><img id="BtnImg2" src="{{img2}}"   ></button></td>
+              <td><button disabled id="boton3" (click)="jugar(3)" class="btn btn-link btn-xs"><img id="BtnImg3" src="{{img3}}" ></button></td>
+                </tr>
+              <tr>
+              <td><button disabled id="boton4" (click)="jugar(4)" class="btn btn-link btn-xs"><img id="BtnImg4" src="{{img4}}" ></button></td>
+              <td><button disabled id="boton5" (click)="jugar(5)" class="btn btn-link btn-xs"><img id="BtnImg5" src="{{img5}}" ></button></td>
+              <td><button disabled id="boton6" (click)="jugar(6)" class="btn btn-link btn-xs"><img id="BtnImg6" src="{{img6}}" ></button></td>
+                </tr>
+              <tr>
+              <td><button disabled id="boton7" (click)="jugar(7)" class="btn btn-link btn-xs"><img id="BtnImg7" src="{{img7}}" ></button></td>
+              <td><button disabled id="boton8" (click)="jugar(8)" class="btn btn-link btn-xs"><img id="BtnImg8" src="{{img8}}" ></button></td>
+              <td> <button disabled id="boton9" (click)="jugar(9)" class="btn btn-link btn-xs"><img id="BtnImg9" src="{{img9}}" ></button></td>
+                </tr>
+
+
+        </table>
+      <section id="msjPuntos"></section>
+    </div>
+  </div>
+</body>
